@@ -9,7 +9,9 @@
     --secondary-success:    #19E6A9;
 }
 
-
+* {
+    font-size:      1.1rem;
+}
 
 body {
     color:              var(--grey);
@@ -44,6 +46,13 @@ form {
     display:        flex;
     flex-direction: column;
     align-items:    center;
+}
+
+
+button.flickering {
+    padding:    1rem 2rem;
+    color:      var(--light-main);
+    background: var(--black);
 }
 
 
