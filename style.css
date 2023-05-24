@@ -8,3 +8,9 @@
     --main-success:         #00996C;
     --secondary-success:    #19E6A9;
 }
+
+
+body {
+    margin:         0;
+    background:     var(--light-main);
+}
