@@ -18,7 +18,7 @@
 }
 
 body {
-    color:              var(--grey);
+    color:              var(--light-main);
     margin:             0;
     background:         var(--black);
     font-family:        'Source Sans Pro', sans-serif;
@@ -55,6 +55,27 @@ form {
     position:       relative;
 }
 
+label[for="skill"] {
+    letter-spacing:     3px;
+    font-weight:        900;
+}
+
+#skill {
+    margin-top:     1rem;
+    padding:        0.4rem 10rem;
+    border-radius:  20px;
+    background:     linear-gradient(left to right, white, grey);
+    transition:     transform 0.3s ease;
+}
+
+
+#skill:focus {
+    transform:      scale(1.01);
+}
+#skill:hover {
+    transform:      scale(1.01);
+}
+
 
 
 button.flickering {
@@ -62,6 +83,7 @@ button.flickering {
     padding:    1rem 2rem;
     color:      var(--light-main);
     background: var(--black);
+    cursor:     pointer;
 }
 
 
