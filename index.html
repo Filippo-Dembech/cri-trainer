@@ -18,6 +18,17 @@
 <body>
   
     <h1 id="main-title">CRI CRAMMER</h1>
+    <form action="">
+        <label for="skills">Select skills:</label>
+        <select name="skills" id="skills"></select>
+        <button>Go Practice</button>
+        <div class="settings">
+            <label for="timer-toggler">Timer</label>
+            <input type="checkbox" name="timer-toggler" id="timer-toggler">
+            <label for="timer-amount">Timer Amount</label>
+            <input type="range" min="1" max="10" step="1">
+        </div>
+    </form>
 
     <!-- JavaScript-->
     <script src="app.js"></script>
