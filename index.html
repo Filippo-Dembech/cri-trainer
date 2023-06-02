@@ -16,18 +16,31 @@
     <title>CRI Crammer</title>
 </head>
 <body>
-  
+ 
+    <!-- HEADER -->
     <h1 class="flickering" id="main-title">CRI CRAMMER</h1>
+
+    <!-- FORM -->
     <form action="">
+
+        <!-- FORM SELECTION -->
         <label for="skill">Select skill:</label>
         <select name="skill" id="skill">
         </select>
+
+        <!-- FORM BUTTON -->
         <button class="flickering">Go Practice</button>
+
+        <!-- FORM SETTINGS-->
         <div class="settings">
+
+            <!-- FORM SETTINGS TIMER -->
             <div>
                 <label for="timer-toggler">Timer</label>
                 <input type="checkbox" name="timer-toggler" id="timer-toggler">
             </div>
+
+            <!-- FORM SETTINGS TIMER AMOUNT -->
             <div>
                 <label for="timer-amount">Timer Amount</label>
                 <input type="range" min="1" max="10" step="1">
@@ -35,7 +48,9 @@
         </div>
     </form>
 
-    <!-- JavaScript-->
+    <!-- JavaScript -->
+    <script src="collections.js"></script>
     <script src="app.js"></script>
+
 </body>
 </html>
