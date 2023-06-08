@@ -62,7 +62,7 @@ label[for="skill"] {
     font-weight:        900;
 }
 
-#skill {
+#skills {
     text-align:     center;
     margin-top:     1rem;
     padding:        0.4rem 10rem;
@@ -72,10 +72,10 @@ label[for="skill"] {
 }
 
 
-#skill:focus {
+#skills:focus {
     transform:      scale(1.01);
 }
-#skill:hover {
+#skills:hover {
     transform:      scale(1.01);
 }
 

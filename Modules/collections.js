@@ -33,5 +33,3 @@ class Skill {
 
 }
 
-
-export { Skill }
