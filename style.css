@@ -16,6 +16,8 @@
 
 
     --margin-to-selection:  15vh;
+    --starting-outside-pos: 100vw;
+    --ending-outside-pos:   -100vw;
 }
 
 
@@ -30,6 +32,7 @@ body {
     flex-direction:     column;
     justify-content:    center;
     align-items:        center;
+    overflow:           hidden
 }
 
 
@@ -158,14 +161,30 @@ button.flickering {
     box-sizing:     border-box;
     display:        flex;
     flex-direction: column;
+    animation:      go-in 3s paused;
+}
+
+#exercise-section .step {
+    border:     2px solid gold;
+    padding:    20px;
+    flex-grow:  1;
 }
 
 
-@keyframes go-away {
+@keyframes go-out {
     from {
         transform:      translateX(0);
     }
     to {
-        transform:      translateX(-100vw)
+        transform:      translateX(var(--ending-outside-pos))
+    }
+}
+
+@keyframes go-in {
+    from {
+        transform:      translateX(var(--starting-outside-pos));
+    }
+    to {
+        transform:      translateX(0)
     }
 }

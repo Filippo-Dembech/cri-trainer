@@ -16,8 +16,12 @@ skillSelector.appendChild(skillSpinale)
 
 selectionButton.addEventListener('click', function(e) {
     e.preventDefault();
-    const frontSelection = document.getElementById("front-selection");
-    frontSelection.style.animation = "go-away 3s";
+    const frontSection = document.getElementById("front-section");
+    const exerciseSection = document.getElementById("exercise-section")
+    frontSection.style.animation = "go-out 3s";
+    frontSection.style.animationFillMode = "forwards";
+    exerciseSection.style.animationPlayState = "running";
+
 })
 
 
