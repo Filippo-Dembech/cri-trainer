@@ -48,7 +48,7 @@ h4 {
 
 h1 {
     color:          var(--light-main);
-    font-size:      4rem;
+    font-size:      200%;
     letter-spacing: 5px;
     margin-bottom:  var(--margin-to-selection);
 }
@@ -68,7 +68,7 @@ label[for="skill"] {
 
 #skills {
     margin-top:     1rem;
-    padding:        0.4rem 10rem;
+    padding:        0.4rem 0;
     border-radius:  var(--radius);
     background:     linear-gradient(left to right, white, grey);
     transition:     transform 0.3s ease;
