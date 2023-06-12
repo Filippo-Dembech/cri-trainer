@@ -150,6 +150,17 @@ button.flickering {
 }
 
 
+#exercise-section {
+    border:         3px solid purple;
+    position:       absolute;
+    width:          100%;
+    height:         100%;
+    box-sizing:     border-box;
+    display:        flex;
+    flex-direction: column;
+}
+
+
 @keyframes go-away {
     from {
         transform:      translateX(0);
