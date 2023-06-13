@@ -60,7 +60,7 @@ const skills = {
             "Rimuove oggetti mobili non conficcati (occhiali, auricolari, etc.)",
             "Fa raggiungere e mantenere posizione neutra del capo, allinea gli arti del paziente (se necessario)",
             "Slaccia o taglia il cinturino, controlla il collo",
-            "Inserisce una mano sotto il casco e afferra la nuca (gomito e avambraccio appoggiato a terra)",
+            "Inserisce una mano sotto il casco e afferra la nuca (gomito e avambraccio appoggiati a terra)",
             "Posiziona delicatamente l'avambraccio sul torace e afferra la mandibola con pollice e indice",
             "Il 2° soccorritore afferra i lati del casco con il cinturino, li allarga, bascula il casco all'indietro ed inizia a sfilarlo",
             "Quando è visibile il naso, avvisa il 1° soccorritore di tenersi pronto e sfila il casco",
@@ -93,7 +93,7 @@ const skills = {
             "Si inginocchia a lato del paziente, con un ginocchio sopra la tavola spinale e posiziona le mani all'altezza della spalla e del bacino contenendo il polso del paziente",
             "Fa posizionare il 3° soccorritore a lato del paziente, con un ginocchio sopra la tavola spinale con le mani a livello del torace e del femore",
             "Al via del soccorritore alla testa, si ruota il paziente di 90° gradi; la testa va portata in posizione neutra",
-            "Il 2° e 3° soccorritore spostano le mani postariormente sulla schiena",
+            "Il 2° e 3° soccorritore spostano le mani posteriormente sulla schiena",
             "Al via del soccorritore alla testa, si ruota il paziente adagiandolo sulla tavola spinale",
             "Il soccorritore alla testa comunica la necessità di centrare il paziente sulla spinale",
             "Se necessario i soccorritori si posizionano a lato (o a cavalcioni) del paziente, lo afferrano all'altezza delle spalle e del bacino",
@@ -103,12 +103,12 @@ const skills = {
     "Immobilizzazione Frattura": new Skill(
         "Immobilizzazione Frattura",
         [
-            "Si presenta la paziente e gli spiega la manovra",
+            "Si presenta al paziente e gli spiega la manovra",
             "Individua il punto dolente sull'arto, taglia gli indumenti ed espone l'arto",
             "Se indicato rimuove la scarpa, taglia o allenta le stringhe evitando movimenti bruschi",
             "Valuta il colorito cutaneo e la sensibilità, se possibile valuta polso periferico",
-            "Afferra l'arto con le due mani (fulcro sulle articolazioni prossimali e distali) e lo riallinea, se possibile e se non frattura esposta",
-            "Il secondo soccorritore prepara la stecca di misura adeguata distandendo il contenuto della stessa",
+            "Afferra l'arto con le due mani (fulcro sulle articolazioni prossimali e distali) e lo riallinea, se possibile e se la frattura non è esposta",
+            "Il secondo soccorritore prepara la stecca di misura adeguata distendendo il contenuto della stessa",
             "Solleva l'arto di pochi centimetri mantenendolo in lieve trazione e fa infilare la stecca al di sotto dell'arto",
             "Adagia l'arto sulla stecca e continua a mantenerlo immobilizzato con le mani",
             "Fa mettere in depressione la stecca / Fissa i lacci con il velcro/gancio",
@@ -171,7 +171,65 @@ const skills = {
             "Distribuisce uniformemente le palline di polistirolo al suo interno eliminando le pieghe della tela",
             "Solleva il paziente con la barella a cucchiaio, coordinando l'equipaggio",
             "Depone il paziente sul materassino con la testa allineata al bordo superiore",
-            "Toglie le valvole della barella a cucchiaio mentenendo la stabilità del rachide"
+            "Toglie le valvole della barella a cucchiaio mantenendo la stabilità del rachide",
+            "Modella il materassino ai lati della testa, del tronco e degli arti, inserisce un eventuale spessore tra i due arti inferiori",
+            "Fa attivare la depressione del materassino e fissa le cinghie laterali",
+            "Mentre si irrigidisce, modella ulteriormente il materassino intorno al paziente facendo attenzione di non coprire il volto",
+            "Verifica la raggiunta rigidità del materassino e la tenuta della valvola di aspirazione",
+            "Solleva il paziente stando ai lati (ideale quattro soccorritori) e lo trasporta sulla barella a cucchiaio coordinando l'equipaggio",
+            "Posiziona il paziente nel materasso a depressione sopra la tavola a cucchiaio per il trasporto fino alla barella",
+            "Fissa il paziente e il materassion alla barella portantina"
+        ]
+    ),
+    "Barella A Cucchiaio": new Skill(
+        "Barella A Cucchiaio",
+        [
+            "Fa immobilizzre il capo del paziente in posizione neutra",
+            "Chiama il paziente, si presenta e spiega la manovra",
+            "Applica il collare cervicale adatto, previa valutazione del collo, fa mantenere l'immobilizzazione manuale al 2° soccorritore",
+            "Posiziona la barella al lato del paziente e regola la lunghezza",
+            "Blocca correttamente la barella alla lunghezza adatta, apre le cerniere separando le due emivalve",
+            "Posiziona le due emivalve ai lati del paziente (facendo attenzione a non passare sopra al corpo del paziente)",
+            "Fa posizionare il 3° soccorritore a lato del paziente, il quale afferra con una mano la spalla e con l'altra il bacino e l'estremità dell'arto inferiore, solleva quanto basta per far inserire l'emivalva della cucchiaio",
+            "Infila ciascuna emivalva sotto al paziente",
+            "Il 1° e il 3° soccorritore agganciano prima la cerniera superiore e poi quella inferiore",
+            "Verfica la tenuta delle cerniere",
+            "Controlla il mantenimento dell'immobilizzazione manuale del capo durante tutte le manovre",
+            "Trasporta sulla tavola spinale o materasso a depressione"
+        ]
+    ),
+    "Log-Roll Su Tavola Spinale": new Skill(
+        "Log-Roll Su Tavola Spinale",
+        [
+            "Fa immobilizzare manualmente il capo in posizione neutra",
+            "Si presenta al paziente e gli spiega la manovra",
+            "Allinea gli arti del paziente lungo l'asse del corpo",
+            "Posiziona il collare cervicale",
+            "Fa posizionare la tavola spinale a lato del paziente (lato opposto alla posizione dei soccorritori",
+            "Si inginocchia a lato del paziente e posiziona le mani all'altezza della spalla e del bacino (contenendo il braccio del paziente in modo che non rimanga mobile)",
+            "Fa posizionare il 3° soccorritore a lato del paziente, con le mani a livello del torace (tra braccio e torace) e sul femore (in prossimità del ginocchio)",
+            "Al via del soccorritore alla testa, si ruota tutto il paziente di 90°; la testa va mantenuta in posizione neutra",
+            "Stacca la mano dal bacino, ispeziona la schiena e avvicina la spinale, cambia la mano da una spalla all'altra e chiede al 3° soccorritore di cambiare la posizione delle mani afferrando la spinale",
+            "Al via del soccorritore alla testa, si ruota il paziente e la tavola spinale, il soccorritore alla testa valuta la necessità di centrare il paziente sulla spinale",
+            "Se necessario i soccorritori si posizionano di lato (o a cavalcioni) del paziente, lo afferrano all'altezza delle spalle e del bacino",
+            "Al via del soccorritore alla testa, si centra il paziente sulla tavola spinale, con piccoli movimenti sincronizzati verso il lato e verso l'alto"
+        ]
+    ),
+    "Abbattimento Su Spinale": new Skill(
+        "Abbattimento Su Spinale",
+        [
+            "Chiama il paziente, si presenta e gli spiega la manovra",
+            "Il 1° soccorritore si pone dietro al paziente e immobilizza il rachide cervicale",
+            "Posiziona il collare cervicale",
+            "Inserisce, con il 3° soccorritore, la tavola spinale dietro al paziente facendola aderire alla schiena. Il 1° soccorritore, mantenendo sempre il rachide in linea, blocca la spinale in posizione verticale premendo con il suo corpo verso il paziente",
+            "Il 2° e il 3° soccorritore si posizionano frontalmente a lato del paziente, inseriscono il braccio più vicino sotto all'ascella afferrando l'impugnatura della tavola spinale",
+            "Con l'altra mano, impugnano la tavola spinale all'altezza del capo del paziente mettendo un piede alla base della tavola spinale al fine di evitarne lo scivolamento",
+            "Contemporaneamente, abbassano la tavola spinale in modo sincrono, mentre il 1° soccorritore indietreggia lentamente mantenendo il rachide cervicale in asse",
+            "Concludono il movimento appoggiando a terra la spinale. Mentre il 1° soccorritore si posiziona in ginocchio mantenendo il capo in posizione neutra",
+            "Se necessario riallinea il paziente e lo centra sulla tavola spinale",
+            "Posiziona/fa posizionare ragno e fermacapo",
+            "Sospende/fa sospendere l'immobilizzazione manuale del capo",
+            "Solleva, con l'ausilio del 3° soccorritore, la tavola spinale ai lati, utilizzando le apposite impugnature"
         ]
     )
 
