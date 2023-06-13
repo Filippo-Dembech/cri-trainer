@@ -1,0 +1,332 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+* {
+    font-size:      1.1rem;
+    margin:         0;
+}
+
+
+:root {
+    --light-main:           #fae7e7;       
+    --grey:                 #786a6a;
+    --black:                #090202;
+    --primary-color:        #992808;
+    --secondary-color:      #f74848;
+    --font-color:           #E54519;
+    --main-success:         #00996C;
+    --secondary-success:    #19E6A9;
+
+
+    --margin-to-selection:  15vh;
+    --starting-outside-pos: 120vw;
+    --ending-outside-pos:   -120vw;
+    --radius:               20px;
+}
+
+
+body {
+    color:              var(--light-main);
+    margin:             0;
+    background:         var(--black);
+    font-family:        'Source Sans Pro', sans-serif;
+    height:             100svh;
+    width:              100svw;
+    text-align:         center;
+    display:            -webkit-box;
+    display:            -ms-flexbox;
+    display:            flex;
+    -webkit-box-orient:     vertical;
+    -webkit-box-direction:     normal;
+        -ms-flex-direction:     column;
+            flex-direction:     column;
+    -webkit-box-pack:    center;
+        -ms-flex-pack:    center;
+            justify-content:    center;
+    -webkit-box-align:        center;
+        -ms-flex-align:        center;
+            align-items:        center;
+    overflow:           hidden
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Oswald', sans-serif;
+}
+
+
+h1 {
+    color:          var(--light-main);
+    font-size:      300%;
+    letter-spacing: 5px;
+    margin-bottom:  var(--margin-to-selection);
+}
+
+
+form {
+    display:        -webkit-box;
+    display:        -ms-flexbox;
+    display:        flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align:    center;
+        -ms-flex-align:    center;
+            align-items:    center;
+    position:       relative;
+}
+
+label[for="skill"] {
+    letter-spacing:     3px;
+    font-weight:        900;
+}
+
+#skills {
+    margin-top:     1rem;
+    padding:        .4rem .4rem;
+    border-radius:  var(--radius);
+    background:     -webkit-gradient(linear, right to left, from(white), to(grey));
+    background:     -o-linear-gradient(left to right, white, grey);
+    background:     linear-gradient(left to right, white, grey);
+    -webkit-transition:     -webkit-transform 0.3s ease;
+    transition:     -webkit-transform 0.3s ease;
+    -o-transition:     transform 0.3s ease;
+    transition:     transform 0.3s ease;
+    transition:     transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+
+#skills:focus {
+    -webkit-transform:      scale(1.01);
+        -ms-transform:      scale(1.01);
+            transform:      scale(1.01);
+}
+
+#skills:hover {
+    -webkit-transform:      scale(1.01);
+        -ms-transform:      scale(1.01);
+            transform:      scale(1.01);
+}
+
+#exercise-section {
+    position:       absolute;
+    padding:        40px;
+    width:          100svw;
+    height:         100svh;
+    -webkit-box-sizing:     border-box;
+            box-sizing:     border-box;
+    display:        -webkit-box;
+    display:        -ms-flexbox;
+    display:        flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow:       auto;
+    /*animation:      go-in 1.2s paused;*/
+}
+
+#exercise-section .step {
+    background:         var(--light-main);
+    color:              var(--black);
+    line-height:        120%;
+    letter-spacing:     110%;
+    position:           relative;
+    display:            -webkit-box;
+    display:            -ms-flexbox;
+    display:            flex;
+    -webkit-box-align:        center;
+        -ms-flex-align:        center;
+            align-items:        center;
+    border-radius:      20px;
+    padding:            20px;
+    margin:             20px;
+    opacity:            0.9;
+}
+
+#exercise-section .step::before {
+    content:            "Show Step";
+    color:              var(--light-main);
+    font-weight:        bold;
+    letter-spacing:     5px;
+    background:         var(--black);
+    display:            -webkit-box;
+    display:            -ms-flexbox;
+    display:            flex;
+    -webkit-box-pack:    center;
+        -ms-flex-pack:    center;
+            justify-content:    center;
+    -webkit-box-align:        center;
+        -ms-flex-align:        center;
+            align-items:        center;
+    position:           absolute;
+    inset:              0 0 0 0;
+    border-radius:      var(--radius);
+    opacity:            var(--js-opacity);
+    -webkit-transition:         opacity 0.2s ease-in-out;
+    -o-transition:         opacity 0.2s ease-in-out;
+    transition:         opacity 0.2s ease-in-out;
+    -webkit-box-shadow:
+        0 0 .2rem var(--light-main),
+        0 0 .2rem var(--light-main),
+        0 0 2rem var(--secondary-color),
+        0 0 0.8rem var(--secondary-color),
+        0 0 2.8rem var(--secondary-color),
+        inset 0 0 1.3rem var(--secondary-color);
+            box-shadow:
+        0 0 .2rem var(--light-main),
+        0 0 .2rem var(--light-main),
+        0 0 2rem var(--secondary-color),
+        0 0 0.8rem var(--secondary-color),
+        0 0 2.8rem var(--secondary-color),
+        inset 0 0 1.3rem var(--secondary-color);
+    text-shadow:
+        0 0 7px var(--light-main),
+        0 0 10px var(--light-main),
+        0 0 21px var(--light-main),
+        0 0 42px var(--secondary-color),
+        0 0 82px var(--secondary-color),
+        0 0 92px var(--secondary-color),
+        0 0 102px var(--secondary-color),
+        0 0 151px var(--secondary-color);
+}
+
+#exercise-section .hidden {
+    display: none;
+}
+
+#exercise-section.hidden {
+    display: none;
+}
+
+button.flickering {
+    margin-top: var(--margin-to-selection);
+    padding:    1rem 2rem;
+    color:      var(--light-main);
+    background: var(--black);
+    cursor:     pointer;
+}
+
+
+.settings {
+    display:        -webkit-box;
+    display:        -ms-flexbox;
+    display:        flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position:       absolute;
+}
+
+
+.settings div {
+    display:    -webkit-box;
+    display:    -ms-flexbox;
+    display:    flex;
+    width:      -webkit-max-content;
+    width:      -moz-max-content;
+    width:      max-content;
+    visibility: hidden;                 /* TODO */
+}
+
+
+.flickering {
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em;
+    text-shadow:
+        0 0 7px var(--light-main),
+        0 0 10px var(--light-main),
+        0 0 21px var(--light-main),
+        0 0 42px var(--secondary-color),
+        0 0 82px var(--secondary-color),
+        0 0 92px var(--secondary-color),
+        0 0 102px var(--secondary-color),
+        0 0 151px var(--secondary-color);
+    -webkit-box-shadow:
+        0 0 .2rem var(--light-main),
+        0 0 .2rem var(--light-main),
+        0 0 2rem var(--secondary-color),
+        0 0 0.8rem var(--secondary-color),
+        0 0 2.8rem var(--secondary-color),
+        inset 0 0 1.3rem var(--secondary-color);
+            box-shadow:
+        0 0 .2rem var(--light-main),
+        0 0 .2rem var(--light-main),
+        0 0 2rem var(--secondary-color),
+        0 0 0.8rem var(--secondary-color),
+        0 0 2.8rem var(--secondary-color),
+        inset 0 0 1.3rem var(--secondary-color);
+}
+
+
+@-webkit-keyframes go-out {
+    from {
+        -webkit-transform:      translateX(0);
+                transform:      translateX(0);
+    }
+    to {
+        -webkit-transform:      translateX(var(--ending-outside-pos));
+                transform:      translateX(var(--ending-outside-pos))
+    }
+}
+
+
+@keyframes go-out {
+    from {
+        -webkit-transform:      translateX(0);
+                transform:      translateX(0);
+    }
+    to {
+        -webkit-transform:      translateX(var(--ending-outside-pos));
+                transform:      translateX(var(--ending-outside-pos))
+    }
+}
+
+@-webkit-keyframes go-in {
+    from {
+        -webkit-transform:      translateX(var(--starting-outside-pos));
+                transform:      translateX(var(--starting-outside-pos));
+    }
+    to {
+        -webkit-transform:      translateX(0);
+                transform:      translateX(0)
+    }
+}
+
+@keyframes go-in {
+    from {
+        -webkit-transform:      translateX(var(--starting-outside-pos));
+                transform:      translateX(var(--starting-outside-pos));
+    }
+    to {
+        -webkit-transform:      translateX(0);
+                transform:      translateX(0)
+    }
+}
+
+
+
+@media only screen and (max-width: 400px) {
+    #front-section {
+        width:    80%;
+    }
+
+    #front-section #main-title {
+        font-size: 200%;
+    }
+
+    #skills {
+        font-size: 0.7rem;
+        padding:   0.4rem .4rem;
+    }
+}
