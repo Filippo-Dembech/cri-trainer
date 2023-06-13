@@ -20,19 +20,41 @@ selectionButton.addEventListener('click', function(e) {
     const frontSection = document.getElementById("front-section");
     const exerciseSection = document.getElementById("exercise-section");
 
-    for (let step of skills[skillSelector.value].steps) {
+    skillSteps = skills[skillSelector.value].steps
+
+    for (let i = 0; i < skillSteps.length; i++) {
         const newStep = document.createElement('p');
-        newStep.classList.add('step');
-        newStep.innerHTML = step;
+        if (i === 0) {
+            newStep.classList.add('step')
+        } else {
+            newStep.classList.add('step', 'hidden');
+        }
+        newStep.innerHTML = skillSteps[i];
         newStep.addEventListener('click', function() {
             this.style.setProperty("--js-opacity", 0);
+            if (this.nextSibling) {
+                sibilingClasses = [...this.nextSibling.classList];
+                if (sibilingClasses.includes('hidden')) {
+                    this.nextSibling.classList.toggle("hidden");
+                }
+            } else {
+                frontSection.style.animation = "go-in 1.2s";
+                frontSection.style.animationFillMode = "forwards";
+                exerciseSection.style.animation = "go-out 1.2s forwards";
+                setTimeout(() => {
+                    exerciseSection.innerHTML = "";
+                }, 1300)
+            }
         })
         exerciseSection.appendChild(newStep);
     };
 
-    frontSection.style.animation = "go-out 3s";
+    frontSection.style.animation = "go-out 1.2s";
     frontSection.style.animationFillMode = "forwards";
-    exerciseSection.style.animationPlayState = "running";
+    exerciseSection.classList.remove('hidden');
+    exerciseSection.style.animation = "go-in 1.2s";
+    exerciseSection.style.animationFillMode = "forwards";
+    //exerciseSection.style.animationPlayState = "running";
 
 })
 

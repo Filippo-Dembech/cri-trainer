@@ -27,8 +27,8 @@ body {
     margin:             0;
     background:         var(--black);
     font-family:        'Source Sans Pro', sans-serif;
-    height:             100dvh;
-    width:              100dvw;
+    height:             100svh;
+    width:              100svw;
     text-align:         center;
     display:            flex;
     flex-direction:     column;
@@ -68,7 +68,7 @@ label[for="skill"] {
 
 #skills {
     margin-top:     1rem;
-    padding:        0.4rem 0;
+    padding:        .4rem .4rem;
     border-radius:  var(--radius);
     background:     linear-gradient(left to right, white, grey);
     transition:     transform 0.3s ease;
@@ -91,7 +91,8 @@ label[for="skill"] {
     box-sizing:     border-box;
     display:        flex;
     flex-direction: column;
-    animation:      go-in 3s paused;
+    overflow:       scroll;
+    /*animation:      go-in 1.2s paused;*/
 }
 
 #exercise-section .step {
@@ -122,7 +123,13 @@ label[for="skill"] {
     transition:         opacity 0.2s ease-in-out;
 }
 
+#exercise-section .hidden {
+    display: none;
+}
 
+#exercise-section.hidden {
+    display: none;
+}
 
 button.flickering {
     margin-top: var(--margin-to-selection);
@@ -212,5 +219,18 @@ button.flickering {
     }
     to {
         transform:      translateX(0)
+    }
+}
+
+
+
+@media only screen and (max-width: 400px) {
+    #front-section {
+        width:    80%;
+    }
+
+    #skills {
+        font-size: 0.7rem;
+        padding:   0.4rem .4rem;
     }
 }
