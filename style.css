@@ -174,7 +174,7 @@ button.flickering {
         0 0 0.8rem var(--secondary-color),
         0 0 2.8rem var(--secondary-color),
         inset 0 0 1.3rem var(--secondary-color);
-    animation: pulsate 1.5s infinite alternate;   
+    /*animation: pulsate 1.5s infinite alternate;*/   
 }
 
 
