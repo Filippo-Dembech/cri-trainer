@@ -98,20 +98,23 @@ label[for="skill"] {
 #exercise-section .step {
     background:         var(--light-main);
     color:              var(--black);
+    line-height:        120%;
+    letter-spacing:     110%;
     position:           relative;
     display:            flex;
     align-items:        center;
-    font-size:          1rem;
     border-radius:      20px;
     padding:            20px;
-    margin:             3px;
+    margin:             20px;
+    opacity:            0.9;
 }
 
 #exercise-section .step::before {
     content:            "Show Step";
+    color:              var(--light-main);
     font-weight:        bold;
     letter-spacing:     5px;
-    background:         var(--grey);
+    background:         var(--black);
     display:            flex;
     justify-content:    center;
     align-items:        center;
@@ -120,6 +123,22 @@ label[for="skill"] {
     border-radius:      var(--radius);
     opacity:            var(--js-opacity);
     transition:         opacity 0.2s ease-in-out;
+    box-shadow:
+        0 0 .2rem var(--light-main),
+        0 0 .2rem var(--light-main),
+        0 0 2rem var(--secondary-color),
+        0 0 0.8rem var(--secondary-color),
+        0 0 2.8rem var(--secondary-color),
+        inset 0 0 1.3rem var(--secondary-color);
+    text-shadow:
+        0 0 7px var(--light-main),
+        0 0 10px var(--light-main),
+        0 0 21px var(--light-main),
+        0 0 42px var(--secondary-color),
+        0 0 82px var(--secondary-color),
+        0 0 92px var(--secondary-color),
+        0 0 102px var(--secondary-color),
+        0 0 151px var(--secondary-color);
 }
 
 #exercise-section .hidden {
