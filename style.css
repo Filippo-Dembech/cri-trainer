@@ -16,8 +16,8 @@
 
 
     --margin-to-selection:  15vh;
-    --starting-outside-pos: 100vw;
-    --ending-outside-pos:   -100vw;
+    --starting-outside-pos: 120vw;
+    --ending-outside-pos:   -120vw;
     --radius:               20px;
 }
 
@@ -48,7 +48,7 @@ h4 {
 
 h1 {
     color:          var(--light-main);
-    font-size:      200%;
+    font-size:      300%;
     letter-spacing: 5px;
     margin-bottom:  var(--margin-to-selection);
 }
@@ -86,12 +86,12 @@ label[for="skill"] {
 #exercise-section {
     position:       absolute;
     padding:        40px;
-    width:          100%;
-    height:         100%;
+    width:          100svw;
+    height:         100svh;
     box-sizing:     border-box;
     display:        flex;
     flex-direction: column;
-    overflow:       scroll;
+    overflow:       auto;
     /*animation:      go-in 1.2s paused;*/
 }
 
@@ -102,7 +102,6 @@ label[for="skill"] {
     display:            flex;
     align-items:        center;
     font-size:          1rem;
-    font-family:        'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius:      20px;
     padding:            20px;
     margin:             3px;
@@ -200,6 +199,10 @@ button.flickering {
 @media only screen and (max-width: 400px) {
     #front-section {
         width:    80%;
+    }
+
+    #front-section #main-title {
+        font-size: 200%;
     }
 
     #skills {
