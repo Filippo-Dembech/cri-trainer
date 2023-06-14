@@ -89,7 +89,7 @@ label[for="skill"] {
     font-weight:        900;
 }
 
-#skills {
+.skill-selector {
     margin-top:     1rem;
     padding:        .4rem .4rem;
     border-radius:  var(--radius);
@@ -104,25 +104,32 @@ label[for="skill"] {
 }
 
 
-#skills:focus {
+.skill-selector:focus {
     -webkit-transform:      scale(1.01);
         -ms-transform:      scale(1.01);
             transform:      scale(1.01);
 }
 
-#skills:hover {
+.skill-selector:hover {
     -webkit-transform:      scale(1.01);
         -ms-transform:      scale(1.01);
             transform:      scale(1.01);
 }
 
-#exercise-section {
+
+.exercise-section {
     position:       absolute;
     padding:        40px;
     width:          100svw;
     height:         100svh;
     -webkit-box-sizing:     border-box;
             box-sizing:     border-box;
+    display:        none;
+    overflow:       auto;
+}
+
+
+.exercise-section.activated {
     display:        -webkit-box;
     display:        -ms-flexbox;
     display:        flex;
@@ -130,19 +137,18 @@ label[for="skill"] {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    overflow:       auto;
-    /*animation:      go-in 1.2s paused;*/
+    -webkit-box-align:    stretch;
+        -ms-flex-align:    stretch;
+            align-items:    stretch;
 }
 
-#exercise-section .step {
+.exercise-section__step {
     background:         var(--light-main);
     color:              var(--black);
     line-height:        120%;
     letter-spacing:     110%;
     position:           relative;
-    display:            -webkit-box;
-    display:            -ms-flexbox;
-    display:            flex;
+    display:            none;
     -webkit-box-align:        center;
         -ms-flex-align:        center;
             align-items:        center;
@@ -150,14 +156,28 @@ label[for="skill"] {
     padding:            20px;
     margin:             20px;
     opacity:            0.9;
+    cursor:             pointer;
 }
 
-#exercise-section .step::before {
+
+.exercise-section__step:first-of-type {
+    display:    -webkit-box;
+    display:    -ms-flexbox;
+    display:    flex;
+}
+
+.exercise-section__step--displayed {
+    display:     -webkit-box;
+    display:     -ms-flexbox;
+    display:     flex;
+}
+
+.exercise-section__step::before {
     content:            "Show Step";
     color:              var(--light-main);
+    background:         var(--black);
     font-weight:        bold;
     letter-spacing:     5px;
-    background:         var(--black);
     display:            -webkit-box;
     display:            -ms-flexbox;
     display:            flex;
@@ -199,15 +219,19 @@ label[for="skill"] {
         0 0 151px var(--secondary-color);
 }
 
-#exercise-section .hidden {
-    display: none;
+
+.exercise-section__home-button {
+    background:     var(--black);
+    color:          var(--light-main);
+    border:         none;
+    min-width:      30%;
+    margin:         0 auto;
+    font:           inherit;
+    cursor:         pointer;
 }
 
-#exercise-section.hidden {
-    display: none;
-}
 
-button.flickering {
+.confirmation-button.flickering {
     margin-top: var(--margin-to-selection);
     padding:    1rem 2rem;
     color:      var(--light-main);
@@ -268,6 +292,15 @@ button.flickering {
         inset 0 0 1.3rem var(--secondary-color);
 }
 
+.animate-in {
+    -webkit-animation:  go-in 1.2s forwards;
+            animation:  go-in 1.2s forwards;
+}
+
+.animate-out {
+    -webkit-animation:  go-out 1.2s forwards;
+            animation:  go-out 1.2s forwards;
+}
 
 @-webkit-keyframes go-out {
     from {
@@ -279,7 +312,6 @@ button.flickering {
                 transform:      translateX(var(--ending-outside-pos))
     }
 }
-
 
 @keyframes go-out {
     from {
@@ -316,16 +348,16 @@ button.flickering {
 
 
 
-@media only screen and (max-width: 400px) {
-    #front-section {
+@media only screen and (max-width: 450px) {
+    .home-section {
         width:    80%;
     }
 
-    #front-section #main-title {
+    .home-section .home-section__header {
         font-size: 200%;
     }
 
-    #skills {
+    .skill-selector {
         font-size: 0.7rem;
         padding:   0.4rem .4rem;
     }

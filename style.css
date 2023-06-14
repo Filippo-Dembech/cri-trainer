@@ -83,38 +83,54 @@ label[for="skill"] {
     transform:      scale(1.01);
 }
 
+
 .exercise-section {
     position:       absolute;
     padding:        40px;
     width:          100svw;
     height:         100svh;
     box-sizing:     border-box;
-    display:        flex;
-    flex-direction: column;
+    display:        none;
     overflow:       auto;
-    /*animation:      go-in 1.2s paused;*/
 }
 
-.exercise-section .step {
+
+.exercise-section.activated {
+    display:        flex;
+    flex-direction: column;
+    align-items:    stretch;
+}
+
+.exercise-section__step {
     background:         var(--light-main);
     color:              var(--black);
     line-height:        120%;
     letter-spacing:     110%;
     position:           relative;
-    display:            flex;
+    display:            none;
     align-items:        center;
     border-radius:      20px;
     padding:            20px;
     margin:             20px;
     opacity:            0.9;
+    cursor:             pointer;
 }
 
-.exercise-section .step::before {
+
+.exercise-section__step:first-of-type {
+    display:    flex;
+}
+
+.exercise-section__step--displayed {
+    display:     flex;
+}
+
+.exercise-section__step::before {
     content:            "Show Step";
     color:              var(--light-main);
+    background:         var(--black);
     font-weight:        bold;
     letter-spacing:     5px;
-    background:         var(--black);
     display:            flex;
     justify-content:    center;
     align-items:        center;
@@ -141,13 +157,17 @@ label[for="skill"] {
         0 0 151px var(--secondary-color);
 }
 
-.exercise-section .hidden {
-    display: none;
+
+.exercise-section__home-button {
+    background:     var(--black);
+    color:          var(--light-main);
+    border:         none;
+    min-width:      30%;
+    margin:         0 auto;
+    font:           inherit;
+    cursor:         pointer;
 }
 
-.exercise-section.hidden {
-    display: none;
-}
 
 .confirmation-button.flickering {
     margin-top: var(--margin-to-selection);
@@ -194,6 +214,13 @@ label[for="skill"] {
         inset 0 0 1.3rem var(--secondary-color);
 }
 
+.animate-in {
+    animation:  go-in 1.2s forwards;
+}
+
+.animate-out {
+    animation:  go-out 1.2s forwards;
+}
 
 @keyframes go-out {
     from {
@@ -215,8 +242,8 @@ label[for="skill"] {
 
 
 
-@media only screen and (max-width: 400px) {
-    #front-section {
+@media only screen and (max-width: 450px) {
+    .home-section {
         width:    80%;
     }
 
@@ -224,7 +251,7 @@ label[for="skill"] {
         font-size: 200%;
     }
 
-    #skills {
+    .skill-selector {
         font-size: 0.7rem;
         padding:   0.4rem .4rem;
     }

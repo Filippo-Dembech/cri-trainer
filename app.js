@@ -17,11 +17,14 @@ const getElementListFromKeys = (obj, elem='option') => {
     return optionsList;
 }
 
+const hasSiblings = (elem) => elem.nextElementSibling
+
 
 const selectionButton = fetchFirstClassElement("confirmation-button");
 const skillSelector = fetchFirstClassElement("skill-selector");
 const frontSection = fetchFirstClassElement("home-section");
 const exerciseSection = fetchFirstClassElement("exercise-section");
+const stepsSection = fetchFirstClassElement("exercise-section__steps");
 
 // 'skills' is imported from 'collections.js'
 const skillsList = getElementListFromKeys(skills);
@@ -32,49 +35,47 @@ skillSelector.append(...skillsList);
 selectionButton.addEventListener('click', function(e) {
     e.preventDefault();
 
+    /**
+     * @type Skill
+     */
     const selectedSkill = skills[skillSelector.value]
+
+    /**
+     * @type Array<string>
+     */
     const skillSteps = selectedSkill.steps
 
-    for (let i = 0; i < skillSteps.length; i++) {
-        const stepElem = document.createElement('a');
-        if (i === 0) {
-            stepElem.classList.add('step')
-        } else {
-            stepElem.classList.add('step', 'hidden');
-        }
-        stepElem.innerHTML = skillSteps[i];
-        stepElem.addEventListener('click', function() {
+    for (let skill of skillSteps) {
+        const newStepElem = document.createElement('a');
+        newStepElem.classList.add('exercise-section__step')
+        exerciseSection.classList.add('activated');
+        newStepElem.innerHTML = skill;
+        newStepElem.addEventListener('click', function() {
             this.style.setProperty("--js-opacity", 0);
-            if (this.nextSibling) {
-                sibilingClasses = [...this.nextSibling.classList];
-                if (sibilingClasses.includes('hidden')) {
-                    this.nextSibling.classList.toggle("hidden");
-                }
-            } else {
-                frontSection.style.animation = "go-in 1.2s";
-                frontSection.style.animationFillMode = "forwards";
-                exerciseSection.style.animation = "go-out 1.2s forwards";
-                setTimeout(() => {
-                    exerciseSection.innerHTML = "";
-                }, 1300)
+            if (hasSiblings(this)) {
+                this.nextSibling.classList.toggle('exercise-section__step--displayed');
             }
         })
-        exerciseSection.appendChild(newStep);
+        stepsSection.append(newStepElem);
     };
 
-    frontSection.style.animation = "go-out 1.2s";
-    frontSection.style.animationFillMode = "forwards";
-    exerciseSection.classList.remove('hidden');
-    exerciseSection.style.animation = "go-in 1.2s";
-    exerciseSection.style.animationFillMode = "forwards";
-    //exerciseSection.style.animationPlayState = "running";
-
+    frontSection.setAttribute('class', 'home-section animate-out');
+    exerciseSection.setAttribute('class', 'exercise-section activated animate-in');
 })
 
 
+const homeButton = fetchFirstClassElement("exercise-section__home-button")
 
 
+homeButton.addEventListener('click', function() {
 
+    frontSection.setAttribute('class', 'home-section animate-in');
+    exerciseSection.setAttribute('class', 'exercise-section activated animate-out')
+    setTimeout(() => {
+        stepsSection.innerHTML = "";
+    }, 1300)
+
+})
 
 
 
