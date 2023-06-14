@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="cross_browser_style.css">
+    <link rel="stylesheet" href="style.css">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,39 +17,34 @@
 </head>
 <body>
  
-    <section id="front-section">
-        <!-- HEADER -->
-        <h1 class="flickering" id="main-title">CRI CRAMMER</h1>
+    <section class="home-section">
+    
+        <h1 class="home-section__header flickering">CRI CRAMMER</h1>
 
-        <!-- FORM -->
-        <form action="">
+        <form class="home-section__form" action="">
 
-            <!-- FORM SELECTION -->
             <label for="skill">Select skill:</label>
-            <select name="skills" id="skills"></select>
+            <select name="skills" class="skill-selector"></select>
 
-            <!-- FORM BUTTON -->
-            <button id="selection-button" class="flickering">Go Practice</button>
-
-            <!-- FORM SETTINGS-->
+            <button class="confirmation-button flickering">Go Practice</button>
             <div class="settings">
 
-                <!-- FORM SETTINGS TIMER -->
                 <div>
                     <label for="timer-toggler">Timer</label>
                     <input type="checkbox" name="timer-toggler" id="timer-toggler">
                 </div>
 
-                <!-- FORM SETTINGS TIMER AMOUNT -->
                 <div>
                     <label for="timer-amount">Timer Amount</label>
                     <input type="range" min="1" max="10" step="1">
                 </div>
+
             </div>
+
         </form>
     </section>
 
-    <section class="hidden" id="exercise-section">
+    <section class="exercise-section hidden">
     </section>
 
     <!-- JavaScript -->

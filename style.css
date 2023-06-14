@@ -66,7 +66,7 @@ label[for="skill"] {
     font-weight:        900;
 }
 
-#skills {
+.skill-selector {
     margin-top:     1rem;
     padding:        .4rem .4rem;
     border-radius:  var(--radius);
@@ -75,15 +75,15 @@ label[for="skill"] {
 }
 
 
-#skills:focus {
+.skill-selector:focus {
     transform:      scale(1.01);
 }
 
-#skills:hover {
+.skill-selector:hover {
     transform:      scale(1.01);
 }
 
-#exercise-section {
+.exercise-section {
     position:       absolute;
     padding:        40px;
     width:          100svw;
@@ -95,7 +95,7 @@ label[for="skill"] {
     /*animation:      go-in 1.2s paused;*/
 }
 
-#exercise-section .step {
+.exercise-section .step {
     background:         var(--light-main);
     color:              var(--black);
     line-height:        120%;
@@ -109,7 +109,7 @@ label[for="skill"] {
     opacity:            0.9;
 }
 
-#exercise-section .step::before {
+.exercise-section .step::before {
     content:            "Show Step";
     color:              var(--light-main);
     font-weight:        bold;
@@ -141,15 +141,15 @@ label[for="skill"] {
         0 0 151px var(--secondary-color);
 }
 
-#exercise-section .hidden {
+.exercise-section .hidden {
     display: none;
 }
 
-#exercise-section.hidden {
+.exercise-section.hidden {
     display: none;
 }
 
-button.flickering {
+.confirmation-button.flickering {
     margin-top: var(--margin-to-selection);
     padding:    1rem 2rem;
     color:      var(--light-main);
@@ -220,7 +220,7 @@ button.flickering {
         width:    80%;
     }
 
-    #front-section #main-title {
+    .home-section .home-section__header {
         font-size: 200%;
     }
 

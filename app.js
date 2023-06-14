@@ -1,36 +1,49 @@
-const selectionButton = document.getElementById("selection-button");
+// ============= UTILITY CLASSES ===============
+const fetchFirstClassElement = (className) => document.getElementsByClassName(className)[0]
 
-
-const collare = new Skill("Collare Cervicale")
-const spinale = new Skill("Spinale", [])
-
-
-const skillSelector = document.getElementById("skills");
-
-for (let skill in skills ) {
-    const newSkill = document.createElement('option');
-    newSkill.innerHTML = skills[skill].title;
-    skillSelector.appendChild(newSkill);
+/**
+ * Generate a list of specified HTML elements using an object's keys.
+ * @param {string} elem - The HTML tag to add the keys to.
+ * @param {object} obj - The object to take the keys from.
+ * @returns Array<Element>
+ */
+const getElementListFromKeys = (obj, elem='option') => {
+    const optionsList = []
+    for (let key in obj) {
+        const newOpt = document.createElement(elem);
+        newOpt.innerHTML = key;
+        optionsList.push(newOpt);
+    }
+    return optionsList;
 }
+
+
+const selectionButton = fetchFirstClassElement("confirmation-button");
+const skillSelector = fetchFirstClassElement("skill-selector");
+const frontSection = fetchFirstClassElement("home-section");
+const exerciseSection = fetchFirstClassElement("exercise-section");
+
+// 'skills' is imported from 'collections.js'
+const skillsList = getElementListFromKeys(skills);
+
+skillSelector.append(...skillsList);
 
 
 selectionButton.addEventListener('click', function(e) {
     e.preventDefault();
 
-    const frontSection = document.getElementById("front-section");
-    const exerciseSection = document.getElementById("exercise-section");
-
-    skillSteps = skills[skillSelector.value].steps
+    const selectedSkill = skills[skillSelector.value]
+    const skillSteps = selectedSkill.steps
 
     for (let i = 0; i < skillSteps.length; i++) {
-        const newStep = document.createElement('p');
+        const stepElem = document.createElement('a');
         if (i === 0) {
-            newStep.classList.add('step')
+            stepElem.classList.add('step')
         } else {
-            newStep.classList.add('step', 'hidden');
+            stepElem.classList.add('step', 'hidden');
         }
-        newStep.innerHTML = skillSteps[i];
-        newStep.addEventListener('click', function() {
+        stepElem.innerHTML = skillSteps[i];
+        stepElem.addEventListener('click', function() {
             this.style.setProperty("--js-opacity", 0);
             if (this.nextSibling) {
                 sibilingClasses = [...this.nextSibling.classList];
