@@ -10,6 +10,14 @@
     margin:         0;
 }
 
+/*
+*,
+*::before,
+*::after {
+    outline:    4px dotted white;
+}
+*/
+
 
 :root {
     --light-main:           #fae7e7;       
@@ -28,18 +36,22 @@
     --radius:               20px;
 }
 
+html {
+    overflow:   hidden;
+    width:      100svw;
+    height:     100svh;
+}
 
 body {
     color:              var(--light-main);
-    margin:             0;
     background:         var(--black);
     font-family:        'Source Sans Pro', sans-serif;
     height:             100svh;
     width:              100svw;
-    text-align:         center;
     display:            -webkit-box;
     display:            -ms-flexbox;
     display:            flex;
+    text-align:         center;
     -webkit-box-orient:     vertical;
     -webkit-box-direction:     normal;
         -ms-flex-direction:     column;
@@ -50,7 +62,8 @@ body {
     -webkit-box-align:        center;
         -ms-flex-align:        center;
             align-items:        center;
-    overflow:           hidden
+    position:           relative;
+    overflow:           hidden;
 }
 
 
@@ -84,6 +97,7 @@ form {
     position:       relative;
 }
 
+
 label[for="skill"] {
     letter-spacing:     3px;
     font-weight:        900;
@@ -93,9 +107,6 @@ label[for="skill"] {
     margin-top:     1rem;
     padding:        .4rem .4rem;
     border-radius:  var(--radius);
-    background:     -webkit-gradient(linear, right to left, from(white), to(grey));
-    background:     -o-linear-gradient(left to right, white, grey);
-    background:     linear-gradient(left to right, white, grey);
     -webkit-transition:     -webkit-transform 0.3s ease;
     transition:     -webkit-transform 0.3s ease;
     -o-transition:     transform 0.3s ease;
@@ -119,9 +130,13 @@ label[for="skill"] {
 
 .exercise-section {
     position:       absolute;
+    top:            0;
+    right:          0;
+    bottom:         0;
+    left:           0;
     padding:        40px;
-    width:          100svw;
-    height:         100svh;
+    /*width:          100svw;
+    height:         100svh;*/
     -webkit-box-sizing:     border-box;
             box-sizing:     border-box;
     display:        none;
@@ -188,35 +203,13 @@ label[for="skill"] {
         -ms-flex-align:        center;
             align-items:        center;
     position:           absolute;
-    inset:              0 0 0 0;
+    inset:              -2px -2px -2px -2px;
+    border:             0.2rem dotted var(--primary-color);
     border-radius:      var(--radius);
     opacity:            var(--js-opacity);
     -webkit-transition:         opacity 0.2s ease-in-out;
     -o-transition:         opacity 0.2s ease-in-out;
     transition:         opacity 0.2s ease-in-out;
-    -webkit-box-shadow:
-        0 0 .2rem var(--light-main),
-        0 0 .2rem var(--light-main),
-        0 0 2rem var(--secondary-color),
-        0 0 0.8rem var(--secondary-color),
-        0 0 2.8rem var(--secondary-color),
-        inset 0 0 1.3rem var(--secondary-color);
-            box-shadow:
-        0 0 .2rem var(--light-main),
-        0 0 .2rem var(--light-main),
-        0 0 2rem var(--secondary-color),
-        0 0 0.8rem var(--secondary-color),
-        0 0 2.8rem var(--secondary-color),
-        inset 0 0 1.3rem var(--secondary-color);
-    text-shadow:
-        0 0 7px var(--light-main),
-        0 0 10px var(--light-main),
-        0 0 21px var(--light-main),
-        0 0 42px var(--secondary-color),
-        0 0 82px var(--secondary-color),
-        0 0 92px var(--secondary-color),
-        0 0 102px var(--secondary-color),
-        0 0 151px var(--secondary-color);
 }
 
 
@@ -241,9 +234,7 @@ label[for="skill"] {
 
 
 .settings {
-    display:        -webkit-box;
-    display:        -ms-flexbox;
-    display:        flex;
+    display:        none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -253,9 +244,7 @@ label[for="skill"] {
 
 
 .settings div {
-    display:    -webkit-box;
-    display:    -ms-flexbox;
-    display:    flex;
+    display:    none;
     width:      -webkit-max-content;
     width:      -moz-max-content;
     width:      max-content;
@@ -264,32 +253,9 @@ label[for="skill"] {
 
 
 .flickering {
-    border: 0.2rem solid #fff;
+    border: 0.2rem solid var(--secondary-color);
     border-radius: 2rem;
     padding: 0.4em;
-    text-shadow:
-        0 0 7px var(--light-main),
-        0 0 10px var(--light-main),
-        0 0 21px var(--light-main),
-        0 0 42px var(--secondary-color),
-        0 0 82px var(--secondary-color),
-        0 0 92px var(--secondary-color),
-        0 0 102px var(--secondary-color),
-        0 0 151px var(--secondary-color);
-    -webkit-box-shadow:
-        0 0 .2rem var(--light-main),
-        0 0 .2rem var(--light-main),
-        0 0 2rem var(--secondary-color),
-        0 0 0.8rem var(--secondary-color),
-        0 0 2.8rem var(--secondary-color),
-        inset 0 0 1.3rem var(--secondary-color);
-            box-shadow:
-        0 0 .2rem var(--light-main),
-        0 0 .2rem var(--light-main),
-        0 0 2rem var(--secondary-color),
-        0 0 0.8rem var(--secondary-color),
-        0 0 2.8rem var(--secondary-color),
-        inset 0 0 1.3rem var(--secondary-color);
 }
 
 .animate-in {
@@ -350,7 +316,7 @@ label[for="skill"] {
 
 @media only screen and (max-width: 450px) {
     .home-section {
-        width:    80%;
+        width:      80%;
     }
 
     .home-section .home-section__header {

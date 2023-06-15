@@ -29,7 +29,11 @@
     --radius:               20px;
 }
 
-
+html {
+    overflow:   hidden;
+    width:      100svw;
+    height:     100svh;
+}
 
 body {
     color:              var(--light-main);
@@ -42,6 +46,7 @@ body {
     flex-direction:     column;
     justify-content:    center;
     align-items:        center;
+    position:           relative;
     overflow:           hidden;
 }
 
@@ -68,6 +73,7 @@ form {
     align-items:    center;
     position:       relative;
 }
+
 
 label[for="skill"] {
     letter-spacing:     3px;
