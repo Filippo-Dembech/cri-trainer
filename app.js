@@ -55,7 +55,7 @@ selectionButton.addEventListener('click', function(e) {
             if (hasSiblings(this)) {
                 this.nextSibling.classList.toggle('exercise-section__step--displayed');
             }
-        })
+        });
         stepsSection.append(newStepElem);
     };
 
@@ -73,6 +73,7 @@ homeButton.addEventListener('click', function() {
     exerciseSection.setAttribute('class', 'exercise-section activated animate-out')
     setTimeout(() => {
         stepsSection.innerHTML = "";
+        exerciseSection.classList.remove('activated');
     }, 1300)
 
 })

@@ -3,6 +3,14 @@
     margin:         0;
 }
 
+/*
+*,
+*::before,
+*::after {
+    outline:    4px dotted white;
+}
+*/
+
 
 :root {
     --light-main:           #fae7e7;       
@@ -22,19 +30,19 @@
 }
 
 
+
 body {
     color:              var(--light-main);
-    margin:             0;
     background:         var(--black);
     font-family:        'Source Sans Pro', sans-serif;
     height:             100svh;
     width:              100svw;
-    text-align:         center;
     display:            flex;
+    text-align:         center;
     flex-direction:     column;
     justify-content:    center;
     align-items:        center;
-    overflow:           hidden
+    overflow:           hidden;
 }
 
 
@@ -70,7 +78,6 @@ label[for="skill"] {
     margin-top:     1rem;
     padding:        .4rem .4rem;
     border-radius:  var(--radius);
-    background:     linear-gradient(left to right, white, grey);
     transition:     transform 0.3s ease;
 }
 
@@ -86,9 +93,13 @@ label[for="skill"] {
 
 .exercise-section {
     position:       absolute;
+    top:            0;
+    right:          0;
+    bottom:         0;
+    left:           0;
     padding:        40px;
-    width:          100svw;
-    height:         100svh;
+    /*width:          100svw;
+    height:         100svh;*/
     box-sizing:     border-box;
     display:        none;
     overflow:       auto;
@@ -135,26 +146,11 @@ label[for="skill"] {
     justify-content:    center;
     align-items:        center;
     position:           absolute;
-    inset:              0 0 0 0;
+    inset:              -2px -2px -2px -2px;
+    border:             0.2rem dotted var(--primary-color);
     border-radius:      var(--radius);
     opacity:            var(--js-opacity);
     transition:         opacity 0.2s ease-in-out;
-    box-shadow:
-        0 0 .2rem var(--light-main),
-        0 0 .2rem var(--light-main),
-        0 0 2rem var(--secondary-color),
-        0 0 0.8rem var(--secondary-color),
-        0 0 2.8rem var(--secondary-color),
-        inset 0 0 1.3rem var(--secondary-color);
-    text-shadow:
-        0 0 7px var(--light-main),
-        0 0 10px var(--light-main),
-        0 0 21px var(--light-main),
-        0 0 42px var(--secondary-color),
-        0 0 82px var(--secondary-color),
-        0 0 92px var(--secondary-color),
-        0 0 102px var(--secondary-color),
-        0 0 151px var(--secondary-color);
 }
 
 
@@ -179,39 +175,23 @@ label[for="skill"] {
 
 
 .settings {
-    display:        flex;
+    display:        none;
     flex-direction: column;
     position:       absolute;
 }
 
 
 .settings div {
-    display:    flex;
+    display:    none;
     width:      max-content;
     visibility: hidden;                 /* TODO */
 }
 
 
 .flickering {
-    border: 0.2rem solid #fff;
+    border: 0.2rem solid var(--secondary-color);
     border-radius: 2rem;
     padding: 0.4em;
-    text-shadow:
-        0 0 7px var(--light-main),
-        0 0 10px var(--light-main),
-        0 0 21px var(--light-main),
-        0 0 42px var(--secondary-color),
-        0 0 82px var(--secondary-color),
-        0 0 92px var(--secondary-color),
-        0 0 102px var(--secondary-color),
-        0 0 151px var(--secondary-color);
-    box-shadow:
-        0 0 .2rem var(--light-main),
-        0 0 .2rem var(--light-main),
-        0 0 2rem var(--secondary-color),
-        0 0 0.8rem var(--secondary-color),
-        0 0 2.8rem var(--secondary-color),
-        inset 0 0 1.3rem var(--secondary-color);
 }
 
 .animate-in {
@@ -244,7 +224,7 @@ label[for="skill"] {
 
 @media only screen and (max-width: 450px) {
     .home-section {
-        width:    80%;
+        width:      80%;
     }
 
     .home-section .home-section__header {
