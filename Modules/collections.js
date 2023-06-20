@@ -231,6 +231,40 @@ const skills = {
             "Sospende/fa sospendere l'immobilizzazione manuale del capo",
             "Solleva, con l'ausilio del 3° soccorritore, la tavola spinale ai lati, utilizzando le apposite impugnature"
         ]
+    ),
+    "Disostruzione Adulto": new Skill(
+        "Disostruzione Adulto",
+        [
+            "Valuta la scena (scena sicura)",
+            "Chiama il paziente e valuta presenza e qualità del respiro (paziente responsivo con respiro ANORMALE NON COMPATIBILE con ACC - non riesce a parlare)",
+            "Tranquillizza la vittima e gli spiega le manovre che dovrà effettuare",
+            "Avvisa o fa avvisare il sistema d'Emergenza Sanitario (112/118)",
+            "Guarda in bocca per verificare la presenza di corpi estranei visibili (non rilevabili)",
+            "Esegue 5 colpi interscapolari (non efficaci)",
+            "Guarda in bocca per verificare la presenza di corpi estranei visibili (non rilevabili)",
+            "Esegue 5 volte la manovra di Heimlich (non efficace)",
+            "Guarda in bocca per verificare la presenza di corpi estranei visibili (non rilevabili)",
+            "Alterna 5 colpi interscapolari e 5 compressioni di Heimlich fino a risoluzione dell'ostruzione o all'incoscienza della vittima",
+            "Interrompe ogni manovra quando la vittima inizia a tossire vigorosamente",
+            "Allerta il Sistema d'emergenza sanitaria e continua con la valutazione ABCDE"
+        ]
+    ),
+    "Disostruzione Infante": new Skill(
+        "Disostruzione Infante",
+        [
+            "Valuta la scena (scena sicura)",
+            "Chiama il paziente e valuta presenza e qualità del respiro (paziente cosciente - non riesce a parlare, non piange)",
+            "Tranquilliza la vittima e spiega le manovre che dovrà effettuare ai genitori",
+            "Avvisa o fa avvisare il sistema d'Emergenza Sanitario (112/118)",
+            "Guarda in bocca per verificre la presenza di corpi estranei visibili (non rilevabili)",
+            "Esegue 5 colpi interscapolari (non efficaci)",
+            "Guarda in bocca per verificare la presenza di corpi estranei visibili (non rilevabili)",
+            "Esegue 5 CTE (non efficace)",
+            "Guarda in bocca per verificare la presenza di corpi estranei visibli (non rilevabili)",
+            "Alterna 5 colpi interscapolari a 5 CTE fino a risoluzione dell'ostruzione o all'incoscienza della vittima",
+            "Interrompe ogni manovra quando la vittima inizia a piangere vigorosamente",
+            "Allerta il Sistema d'Emergenza Sanitario e continua con la valutazione ABCDE",
+        ]
     )
 
 }
